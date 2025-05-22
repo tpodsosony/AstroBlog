@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const pageTitle = "About Me";
 
 const identity = {
@@ -14,6 +15,10 @@ const interests = ["UNDER NIGHT IN-BIRTH II [Sys:Celes]", "Malazan: Book of the 
 const happy = false;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 <html lang="en">
   <head>
@@ -22,15 +27,26 @@ const goal = 3;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
     <title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+        h1 {
+          color: purple;
+          font-size: 4rem;
+        }
+        .interest {
+          color: var(--skillColor);
+          font-weight: var(--fontWeight);
+          text-transform: var(--textCase);
+        }
+      </style>
   </head>
   <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
     <header>
-        <h3>
+        <h1>
             {pageTitle}
-        </h3>
+        </h1>
     </header>
     <p>
         Howdy! I'm Tal, a recent college graduate who made the crazy decision to make his own blog. A very original tale.
@@ -41,18 +57,9 @@ const goal = 3;
         In the back of my head I always loved the idea of being a writer, but growing up and being at least mildy okay at my coding classes I ended up taking computer science and found myself feeling very stuck. 
         I want to at least give writing a shot, and I think the easiest way to do that is through blogging! I'll see what I learn and am excited to share this journey with any readers this site may have :).
     </p>
-
-    <p>Here are a few facts about me:</p>
-        <ul>
-            <li>My name is {identity.firstName}.</li>
-            <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-            {identity.hobbies.length >= 2 &&
-                <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-            }
-        </ul>
     <p>My current interests are:</p>
     <ul>
-        {interests.map((interest) => <li>{interest}</li>)}
+        {interests.map((interest) => <li class = "interest">{interest}</li>)}
     </ul>
 
     {happy && <p>I am happy to be learning Astro!</p>}
