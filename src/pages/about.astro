@@ -1,5 +1,19 @@
 ---
 const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Tal",
+  country: "Canada",
+  occupation: "Software Developer",
+  hobbies: ["Reading", "Boxing", "Fighting Games", "Movies", "Ships", "DND" ],
+  
+};
+
+const interests = ["UNDER NIGHT IN-BIRTH II [Sys:Celes]", "Malazan: Book of the Fallen", "Critical Role", "Black Sails"];
+
+const happy = false;
+const finished = false;
+const goal = 3;
 ---
 <html lang="en">
   <head>
@@ -27,5 +41,24 @@ const pageTitle = "About Me";
         In the back of my head I always loved the idea of being a writer, but growing up and being at least mildy okay at my coding classes I ended up taking computer science and found myself feeling very stuck. 
         I want to at least give writing a shot, and I think the easiest way to do that is through blogging! I'll see what I learn and am excited to share this journey with any readers this site may have :).
     </p>
+
+    <p>Here are a few facts about me:</p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+            }
+        </ul>
+    <p>My current interests are:</p>
+    <ul>
+        {interests.map((interest) => <li>{interest}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
   </body>
 </html>
