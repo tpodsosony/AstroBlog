@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
 const pageTiltle = "Home";
 ---
 <html lang="en">
@@ -10,9 +11,7 @@ const pageTiltle = "Home";
     <meta name="generator" content={Astro.generator} >
     <title>{pageTiltle}</title>
   </head>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
+  <Navigation />
   <body>
     <h1>{pageTiltle}</h1>
   </body>
