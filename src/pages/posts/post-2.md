@@ -1,7 +1,9 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
+
 title: 'Malazan Rant'
 pubDate: 2025-05-22
-description: ''
+description: 'MalaFRICKINGzan!!'
 author: 'Malazan Lover'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
@@ -9,9 +11,6 @@ image:
 tags: ["Malazan", "Karsa Orlong", "House of Chains"]
 ---
 
-# A Little Malazan Rant
-
-Published on: 2025-05-22
 
 Welcome to my first rendition of ranting about my obsessions
 
